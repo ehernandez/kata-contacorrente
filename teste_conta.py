@@ -59,7 +59,7 @@ class TesteConta(unittest.TestCase):
         c1.transfere(c2, 50)
 
         self.assertEqual(3, len(c1.extrato))
-        self.assertEqual(1, len(c1.extrato))
+        self.assertEqual(1, len(c2.extrato))
 
 
 if __name__ == '__main__':

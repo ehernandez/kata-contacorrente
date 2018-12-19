@@ -4,13 +4,16 @@ class Conta:
         self.id = id
         self.saldo = saldo
         self.limite = limite
+        self.extrato = []
 
     def deposita(self, valor):
         self.saldo += valor
+        self.extrato.append("Depósito: " + str(valor))
 
     def saca(self, valor):
         if (valor <= (self.saldo + self.limite)):
             self.saldo -= valor
+            self.extrato.append("Saque: " + str(valor))
             return True
         return False
 
