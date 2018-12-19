@@ -50,6 +50,17 @@ class TesteConta(unittest.TestCase):
         self.assertEqual(-100, c1.saldo)
         self.assertEqual(200, c2.saldo)
 
+    def test_log_operacoes(self):
+        c1 = Conta(12, 100, 1000)
+        c1.deposita(100)
+        c1.saca(100)
+
+        c2 = Conta(13, 100, 1000)
+        c1.transfere(c2, 50)
+
+        self.assertEqual(3, len(c1.extrato))
+        self.assertEqual(1, len(c1.extrato))
+
 
 if __name__ == '__main__':
     unittest.main()
