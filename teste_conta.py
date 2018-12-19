@@ -13,6 +13,12 @@ class TesteConta(unittest.TestCase):
         c.deposita(100)
         self.assertEqual(100, c.saldo)
 
+    def test_multiplos_deposito(self):
+        c = Conta(3)
+        c.deposita(100)
+        c.deposita(100)
+        self.assertEqual(200, c.saldo)
+
 
 if __name__ == '__main__':
     unittest.main()
