@@ -43,5 +43,13 @@ class TesteConta(unittest.TestCase):
         self.assertEqual(100, c1.saldo)
         self.assertEqual(0, c2.saldo)
 
+    def test_tranferencia_usando_limite(self):
+        c1 = Conta(10, 100, 1000)
+        c2 = Conta(11)
+        c1.transfere(c2, 200)
+        self.assertEqual(-100, c1.saldo)
+        self.assertEqual(200, c2.saldo)
+
+
 if __name__ == '__main__':
     unittest.main()
