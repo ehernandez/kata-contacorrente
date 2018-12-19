@@ -10,3 +10,7 @@ class Conta:
     def saca(self, valor):
         if (valor <= self.saldo):
             self.saldo -= valor;
+
+    def transfere(self, destino, valor):
+        self.saca(valor)
+        destino.deposita(valor)
