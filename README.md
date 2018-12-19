@@ -39,6 +39,7 @@ Abaixo, duas possibilidades para começar a resolução do kata. Uma em Java, ou
 
 ### Exemplos em Java
 
+Exemplo inicial de Conta em Java (Conta.java)
 ```
 public class Conta {
     int id;
@@ -46,9 +47,9 @@ public class Conta {
 }
 ```
 
-Exemplo inicial de Conta em Java (Conta.java)
 
 
+Exemplo inicial de teste de Conta em Java, usando jUnit (TestaConta.java)
 ```
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,9 +64,10 @@ public class TestaConta {
 }
 ```
 
-Exemplo inicial de teste de Conta em Java, usando jUnit (TestaConta.java)
 
 ### Exemplos em Python
+
+Exemplo inicial de Conta em Python (Conta.py)
 ```
     class Conta:
 
@@ -74,8 +76,8 @@ Exemplo inicial de teste de Conta em Java, usando jUnit (TestaConta.java)
             self.saldo = 0
 ```
 
-Exemplo inicial de Conta em Python (Conta.py)
 
+Exemplo inicial de teste de Conta em Python, usando unittest (TesteConta.py)
 ```
     import unittest
     from Conta import Conta
@@ -84,11 +86,10 @@ Exemplo inicial de Conta em Python (Conta.py)
     class TesteConta(unittest.TestCase):
 
         def test_saldo(self):
-            c = Conta(1);
-            self.assertEqual(0, c.saldo);
+            c = Conta(1)
+            self.assertEqual(0, c.saldo)
 
 
     if __name__ == '__main__':
         unittest.main()
 ```
-Exemplo inicial de teste de Conta em Python, usando unittest (TesteConta.py)
