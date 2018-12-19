@@ -36,6 +36,12 @@ class TesteConta(unittest.TestCase):
         self.assertEqual(900, c1.saldo)
         self.assertEqual(100, c2.saldo)
 
+    def test_transferencia_invalida(self):
+        c1 = Conta(8, 100)
+        c2 = Conta(9, 0)
+        c1.transfere(c2, 200)
+        self.assertEqual(100, c1.saldo)
+        self.assertEqual(0, c2.saldo)
 
 if __name__ == '__main__':
     unittest.main()
