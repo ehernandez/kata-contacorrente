@@ -1,8 +1,8 @@
 class Conta:
 
-    def __init__(self, id):
+    def __init__(self, id, saldo = 0):
         self.id = id
-        self.saldo = 0
+        self.saldo = saldo
 
     def deposita(self, valor):
         self.saldo += valor;

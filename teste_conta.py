@@ -24,6 +24,11 @@ class TesteConta(unittest.TestCase):
         c.saca(55)
         self.assertEqual(45, c.saldo)
 
+    def test_tentar_sacar_valor_insuficiente(self):
+        c = Conta(5, 100)
+        c.saca(200)
+        self.assertEqual(100, c.saldo)
+
 
 if __name__ == '__main__':
     unittest.main()
