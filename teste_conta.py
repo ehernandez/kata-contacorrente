@@ -19,6 +19,11 @@ class TesteConta(unittest.TestCase):
         c.deposita(100)
         self.assertEqual(200, c.saldo)
 
+    def test_sacar(self):
+        c = Conta(4, 100)
+        c.saca(55)
+        self.assertEqual(45, c.saldo)
+
 
 if __name__ == '__main__':
     unittest.main()
