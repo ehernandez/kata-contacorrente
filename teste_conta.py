@@ -29,6 +29,13 @@ class TesteConta(unittest.TestCase):
         c.saca(200)
         self.assertEqual(100, c.saldo)
 
+    def test_transferencia(self):
+        c1 = Conta(6, 1000)
+        c2 = Conta(7, 0)
+        c1.transfere(c2, 100)
+        self.assertEqual(900, c1.saldo)
+        self.assertEqual(100, c2.saldo)
+
 
 if __name__ == '__main__':
     unittest.main()
