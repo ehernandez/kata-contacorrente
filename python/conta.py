@@ -8,12 +8,12 @@ class Conta:
 
     def deposita(self, valor):
         self._saldo += valor
-        self._extrato.append("Depósito: " + str(valor))
+        self._extrato.append("Depósito: {}".format(valor))
 
     def saca(self, valor):
         if (valor <= (self._saldo + self._limite)):
             self._saldo -= valor
-            self._extrato.append("Saque: " + str(valor))
+            self._extrato.append("Saque: {}".format(valor))
             return True
         return False
 
