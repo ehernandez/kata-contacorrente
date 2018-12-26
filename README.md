@@ -52,6 +52,8 @@ Adicione o conceito de limite à conta. Modifique também os métodos de teste, 
 ### Requisito #7
 Crie um forma de guardar todas as operações (saque, depósito e transferência) executadas em uma conta.
 
+### Requisito #8
+Faça com que os atributos de Conta não sejam acessíveis fora da própria classe.
 
 ## Material de Apoio
 Abaixo, duas possibilidades para começar a resolução do kata. Uma em Java, outra em Python.
