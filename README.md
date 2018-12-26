@@ -10,6 +10,8 @@ Test Driven Development (TDD) ou Desenvolvimento Guiado por Testes (em portuguê
 Para saber mais:
 * Artigo da Wikipedia: https://pt.wikipedia.org/wiki/Test_Driven_Development
 
+<img alt="Ciclo TDD" src="docs/ciclo_tdd.jpg">
+
 ### Pair Programming
 O Pair Programming (programação pareada ou ainda ou programação em par, em português) é uma técnica de desenvolvimento de software em que dois engenheiros de software trabalham juntos em uma mesma estação de trabalho. Um deles, chamado de *piloto*, escreve o código enquanto o outro, chamado de *navegador*, analisa o código que está sendo construído, contribuindo sempre que achar pertinente. É fundamental que os dois programadores troquem de papel em intervalos de tempo frequentes.
 
