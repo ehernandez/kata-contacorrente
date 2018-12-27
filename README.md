@@ -57,6 +57,8 @@ Crie um forma de guardar todas as operações (saque, depósito e transferência
 ### Requisito #8
 Faça com que os atributos de Conta não sejam acessíveis fora da própria classe.
 
+<br>
+
 ## Material de Apoio
 Abaixo, duas possibilidades para começar a resolução do kata. Uma em Java, outra em Python.
 
@@ -122,3 +124,8 @@ Esse kata já foi executado algumas vezes e algumas informações podem ser pert
 1. Pares com experiência foram capazes de fazer o exercício em um intervalo de tempo entre 60 - 80 minutos.
 1. Pares sem experiência foram capazes de fazer o exercício em um intervalo de tempo entre 90 - 120 minutos.
 1. Conjunto de programadores em estilo dojo ou mob progrraming foram capazes de fazer o exercício em um intervalo de tempo entre 90 - 120 minutos.
+
+## Agradecimentos
+Esse exercício existe e está em constante melhoria através do apoio direto e indireto de algumas pessoas. Entre elas:
+* A inspiração original: [Greeting Kata](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata)
+* Revisões de estilo de código e mensagens de commit por [Ceci Fernandes](https://github.com/ceci) e [Gustavo Andriotti](https://github.com/fgka)
