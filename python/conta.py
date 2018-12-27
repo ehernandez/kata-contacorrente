@@ -1,7 +1,7 @@
 class Conta:
 
     def __init__(self, id, saldo = 0, limite = 0):
-        self.id = id
+        self._id = id
         self._saldo = saldo
         self._limite = limite
         self._extrato = []
@@ -21,11 +21,10 @@ class Conta:
         if (self.saca(valor)) :
             destino.deposita(valor)
 
-    def get_property(self):
+    @property
+    def saldo(self):
         return self._saldo
 
-    def get_extrato(self):
+    @property
+    def extrato(self):
         return self._extrato
-
-    saldo = property(get_property)
-    extrato = property(get_extrato)
