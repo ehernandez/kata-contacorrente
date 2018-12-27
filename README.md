@@ -27,34 +27,34 @@ A ideia desse kata é que cada requisito seja feito pelos passos do TDD:
 Se o exercício for feito em par, o mecanismo adicional é ter uma troca de pares a cada vez que um dos requisitos for considerado entregue.
 
 
-### Requisito #1
+#### Requisito #1
 Crie um método que seja capaz de depositar um valor em conta.
 
 
-### Requisito #2
+#### Requisito #2
 Crie um método que seja capaz de sacar o valor de uma conta.
 
 
-### Requisito #3
+#### Requisito #3
 Crie um método que tente sacar um valor maior que o saldo de uma conta, mas que não faça a operação.
 
 
-### Requisito #4
+#### Requisito #4
 Crie um método que seja capaz de transferir um valor válido de uma conta para outra conta.
 
 
-### Requisito #5
+#### Requisito #5
 Crie um método que tente transferir um valor inválido de uma conta para outra conta.
 
 
-### Requisito #6
+#### Requisito #6
 Adicione o conceito de limite à conta. Modifique também os métodos de teste, se for preciso.
 
 
-### Requisito #7
+#### Requisito #7
 Crie um forma de guardar todas as operações (saque, depósito e transferência) executadas em uma conta.
 
-### Requisito #8
+#### Requisito #8
 Faça com que os atributos de Conta não sejam acessíveis fora da própria classe.
 
 <br>
@@ -64,7 +64,7 @@ Abaixo, duas possibilidades para começar a resolução do kata. Uma em Java, ou
 
 ### Exemplos em Java
 
-Exemplo inicial de Conta em Java (Conta.java)
+Exemplo inicial de Conta em Java (Conta.java`)
 ```
 public class Conta {
     int id;
@@ -74,7 +74,7 @@ public class Conta {
 
 
 
-Exemplo inicial de teste de Conta em Java, usando jUnit (TestaConta.java)
+Exemplo inicial de teste de Conta em Java, usando jUnit (`TestaConta.java`)
 ```
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -92,7 +92,7 @@ public class TestaConta {
 
 ### Exemplos em Python
 
-Exemplo inicial de Conta em Python (Conta.py)
+Exemplo inicial de Conta em Python (`Conta.py`)
 ```
     class Conta:
 
@@ -102,7 +102,7 @@ Exemplo inicial de Conta em Python (Conta.py)
 ```
 
 
-Exemplo inicial de teste de Conta em Python, usando unittest (TesteConta.py)
+Exemplo inicial de teste de Conta em Python, usando unittest (`TesteConta.py`)
 ```
     import unittest
     from Conta import Conta
