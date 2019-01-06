@@ -20,7 +20,7 @@ Para saber mais:
 
 ## Como Executar
 A ideia desse kata é que cada requisito seja feito pelos passos do TDD: 
-1. Primeiro o teste para a solucao
+1. Primeiro o teste para a solução.
 1. Então o código-fonte que resolva o desafio. 
 1. A medida que parecer interessante, pode haver um passo adicional de refatoração. 
 
@@ -28,23 +28,23 @@ Se o exercício for feito em par, o mecanismo adicional é ter uma troca de pare
 
 
 #### Requisito #1
-Crie um método que seja capaz de depositar um valor em conta.
+Crie uma solução que seja capaz de depositar um valor em conta.
 
 
 #### Requisito #2
-Crie um método que seja capaz de sacar o valor de uma conta.
+Crie uma solução que seja capaz de sacar o valor de uma conta.
 
 
 #### Requisito #3
-Crie um método que tente sacar um valor maior que o saldo de uma conta, mas que não faça a operação.
+Crie uma solução que tente sacar um valor maior que o saldo de uma conta, mas que não faça a operação.
 
 
 #### Requisito #4
-Crie um método que seja capaz de transferir um valor válido de uma conta para outra conta.
+Crie uma solução que seja capaz de transferir um valor válido de uma conta para outra conta.
 
 
 #### Requisito #5
-Crie um método que tente transferir um valor inválido de uma conta para outra conta.
+Crie uma solução que tente transferir um valor inválido de uma conta para outra conta.
 
 
 #### Requisito #6
@@ -54,8 +54,9 @@ Adicione o conceito de limite à conta. Modifique também os métodos de teste, 
 #### Requisito #7
 Crie um forma de guardar todas as operações (saque, depósito e transferência) executadas em uma conta.
 
-#### Requisito #8
-Faça com que os atributos de Conta não sejam acessíveis fora da própria classe.
+
+#### Requisito #8 (Extra para quem também quer aprender um pouco mais sobre a linguagem de programação)
+Faça com que os atributos de conta não sejam acessíveis fora da própria classe.
 
 <br>
 
@@ -64,7 +65,7 @@ Abaixo, duas possibilidades para começar a resolução do kata. Uma em Java, ou
 
 ### Exemplos em Java
 
-Exemplo inicial de Conta em Java (Conta.java`)
+Exemplo inicial de Conta em Java (`Conta.java`)
 ```
 public class Conta {
     int id;
