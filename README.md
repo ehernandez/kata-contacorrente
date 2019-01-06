@@ -129,4 +129,5 @@ Esse kata já foi executado algumas vezes e algumas informações podem ser pert
 ## Agradecimentos
 Esse exercício existe e está em constante melhoria através do apoio direto e indireto de algumas pessoas. Entre elas:
 * A inspiração original: [Greeting Kata](https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata)
-* Revisões de estilo de código e mensagens de commit por [Ceci Fernandes](https://github.com/ceci) e [Gustavo Andriotti](https://github.com/fgka)
+* Revisões de estilo de código e mensagens de commit por [Ceci Fernandes](http://cecifernandes.com) e [Gustavo Andriotti](https://github.com/fgka)
+* Sugestões de vocabulário e formato para o exercício por [Elias Nogueira](http://www.eliasnogueira.com) e [Evandro F. Souza](https://medium.com/@evandroferreiras)
