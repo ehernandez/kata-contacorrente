@@ -1,4 +1,4 @@
-## Descrição
+## Kata Conta Corrente
 Esse é um kata planejado para exercitar as práticas de TDD e Pair Programming. Ele foi intencionalmente planejado para começar de maneira bem simples e gradativamente ter mais complexidade adicionada ao desafio e, por consequência, à solução. 
 
 É esperado que no decorrer do exercício as pessoas construam código-fonte de solução e de teste. Todos estão livres para construir novas classes, métodos, funções, atributos, variáveis e testes a medida que isso lhes pareça conveniente. Mesmo tendo alguns exemplos de código-fonte inicial ao final desse documento, esse kata é agnóstico a linguagem de programação. 
@@ -19,9 +19,9 @@ Para saber mais:
 * Artigo da Wikipedia: https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_pareada
 
 ## Como Executar
-A ideia desse kata é que cada requisito seja feito pelos passos do TDD: 
-1. Primeiro o teste para a solução.
-1. Então o código-fonte que resolva o desafio. 
+A ideia desse kata é que cada requisito seja feito pelos passos do TDD, segundo a escola Detroit: 
+1. Primeiro o teste para a solução, que falhará.
+1. Então o código-fonte de solução que resolva o teste e o faça passar. 
 1. A medida que parecer interessante, pode haver um passo adicional de refatoração. 
 
 Se o exercício for feito em par, o mecanismo adicional é ter uma troca de pares a cada vez que um dos requisitos for considerado entregue.
