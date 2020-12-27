@@ -24,12 +24,22 @@ RSpec.describe Conta do
     end
 
     context 'quando não tiver saldo suficiente' do
-      subject { described_class.new(saldo: 20) }
+      subject { described_class.new(saldo: 20, limite: 50) }
 
-      it 'deve decrementar o saldo' do
-        expect { subject.sacar(21) }.to raise_error(described_class::SaldoInsuficienteError)
+      context 'e tiver limite' do
+        it 'deve decrementar o saldo' do
+          subject.sacar(40)
 
-        expect(subject.saldo).to eq(20)
+          expect(subject.saldo).to eq(-20)
+        end
+      end
+
+      context 'e não tiver limite' do
+        it 'não deve alterar o saldo' do
+          expect { subject.sacar(100) }.to raise_error(described_class::SaldoInsuficienteError)
+
+          expect(subject.saldo).to eq(20)
+        end
       end
     end
   end

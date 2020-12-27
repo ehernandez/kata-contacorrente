@@ -5,7 +5,7 @@ class Conta
 
   attr_reader :saldo, :limite
 
-  def initialize(saldo: 0, limite: nil)
+  def initialize(saldo: 0, limite: 0)
     @saldo = saldo
     @limite = limite
   end
@@ -15,7 +15,7 @@ class Conta
   end
 
   def sacar(valor)
-    raise SaldoInsuficienteError if (saldo - valor).negative?
+    check_limite!(valor_saque: valor)
 
     @saldo -= valor
   end
@@ -23,5 +23,11 @@ class Conta
   def transferir(conta_destino:, valor:)
     sacar(valor)
     conta_destino.depositar(valor)
+  end
+
+  private
+
+  def check_limite!(valor_saque:)
+    raise SaldoInsuficienteError if (saldo + limite) < valor_saque
   end
 end
