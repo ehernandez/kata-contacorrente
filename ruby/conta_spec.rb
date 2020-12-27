@@ -67,4 +67,31 @@ RSpec.describe Conta do
       end
     end
   end
+
+  describe 'Registrando operacoes' do
+    let(:conta_origem) { described_class.new(saldo: 50, limite: 10) }
+    let(:conta_destino) { described_class.new(saldo: 10, limite: 100) }
+
+    before do
+      conta_origem.depositar(10)
+      conta_origem.sacar(5)
+      conta_origem.transferir(conta_destino: conta_destino, valor: 30)
+    end
+
+    it 'deve gerar operacoes na conta de origem' do
+      expect(conta_origem.extrato).to contain_exactly(
+        'Valor depositado: 10.00',
+        'Valor sacado: 5.00',
+        'Valor sacado: 30.00',
+        'Saldo: 25.00'
+      )
+    end
+
+    it 'deve gerar operacoes na conta de destino' do
+      expect(conta_destino.extrato).to contain_exactly(
+        'Valor depositado: 30.00',
+        'Saldo: 40.00'
+      )
+    end
+  end
 end
