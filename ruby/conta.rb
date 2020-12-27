@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Conta
+  class SaldoInsuficienteError < StandardError; end
+
   attr_reader :saldo, :limite
 
   def initialize(saldo: 0, limite: nil)
@@ -13,6 +15,8 @@ class Conta
   end
 
   def sacar(valor)
+    raise SaldoInsuficienteError if (saldo - valor).negative?
+
     @saldo -= valor
   end
 end
