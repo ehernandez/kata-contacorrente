@@ -120,6 +120,16 @@ Exemplo inicial de teste de Conta em Python, usando unittest (`TesteConta.py`)
         unittest.main()
 ```
 
+### Exemplos em Ruby
+
+Exemplo inicial de Conta em Ruby (`ruby/conta.rb`).
+
+Para a escrita dos testes foi utilizada a GEM [RSpec](https://rspec.info/).
+
+Documento contendo boas práticas para escrita de testes: https://www.betterspecs.org/
+
+Para rodar os testes: `cd ruby && make test`
+
 ## Execuções
 Esse kata já foi executado algumas vezes e algumas informações podem ser pertinentes para quem for repeti-lo, em conjunto ou mesmo de forma individual.
 1. Pares com experiência foram capazes de fazer o exercício em um intervalo de tempo entre 60 - 80 minutos.
