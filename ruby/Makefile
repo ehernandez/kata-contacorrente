@@ -10,4 +10,4 @@ lint_autocorrect: install-dependencies
 	bundle exec rubocop -A *.rb
 
 test: install-dependencies
-	bundle exec rspec
+	bundle exec rspec *_spec.rb

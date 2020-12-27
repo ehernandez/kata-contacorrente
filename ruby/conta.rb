@@ -11,4 +11,8 @@ class Conta
   def depositar(valor)
     @saldo += valor
   end
+
+  def sacar(valor)
+    @saldo -= valor
+  end
 end
