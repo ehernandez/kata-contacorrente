@@ -7,6 +7,7 @@ RSpec.describe Conta do
   describe 'Depositando um valor' do
     it 'deve incrementar o saldo' do
       subject.depositar(100.5)
+
       expect(subject.saldo).to eq(100.5)
     end
   end
@@ -17,6 +18,7 @@ RSpec.describe Conta do
 
       it 'deve decrementar o saldo' do
         subject.sacar(0.5)
+
         expect(subject.saldo).to eq(99)
       end
     end
@@ -24,18 +26,34 @@ RSpec.describe Conta do
     context 'quando não tiver saldo suficiente' do
       subject { described_class.new(saldo: 20) }
 
-      it 'deve gerar exception' do
+      it 'deve decrementar o saldo' do
         expect { subject.sacar(21) }.to raise_error(described_class::SaldoInsuficienteError)
-      end
-
-      it 'não deve alterar o saldo' do
-        begin
-          subject.sacar(21)
-        rescue described_class::SaldoInsuficienteError
-          nil
-        end
 
         expect(subject.saldo).to eq(20)
+      end
+    end
+  end
+
+  describe 'Transferindo valor entre contas' do
+    let(:conta_origem) { described_class.new(saldo: 100) }
+    let(:conta_destino) { described_class.new(saldo: 1) }
+
+    context 'quando tiver saldo' do
+      it 'deve transferir valor' do
+        conta_origem.transferir(conta_destino: conta_destino, valor: 50)
+
+        expect(conta_origem.saldo).to eq(50)
+        expect(conta_destino.saldo).to eq(51)
+      end
+    end
+
+    context 'quando não tiver saldo' do
+      it 'não deve transferir valor' do
+        expect { conta_origem.transferir(conta_destino: conta_destino, valor: 200) }
+          .to raise_error(described_class::SaldoInsuficienteError)
+
+        expect(conta_origem.saldo).to eq(100)
+        expect(conta_destino.saldo).to eq(1)
       end
     end
   end
