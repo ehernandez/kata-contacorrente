@@ -3,7 +3,7 @@
 class Conta
   class SaldoInsuficienteError < StandardError; end
 
-  attr_reader :saldo, :limite, :operacoes, :id
+  attr_reader :saldo, :limite, :operacoes
 
   def initialize(saldo: 0, limite: 0)
     @saldo = saldo
