@@ -3,10 +3,7 @@ import XCTest
 
 final class ContaTests: XCTestCase {
     func testSaldo() {
-        XCTAssertEqual(0, 0)
+        let conta = Conta(10)
+        XCTAssertEqual(conta.saldo, 10)
     }
-
-    static var allTests = [
-        ("testSaldo", testSaldo),
-    ]
 }
