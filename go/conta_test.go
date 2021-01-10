@@ -5,7 +5,7 @@ import (
 )
 
 func TestDepositar(t *testing.T) {
-	conta := NovaConta(0)
+	conta := NovaConta(0, 0)
 	valorDeposito := float64(100)
 	err := conta.Depositar(valorDeposito)
 	// Sempre verificamos se algum erro aconteceu, mesmo que isso pareça óbvio pelo teste
@@ -18,7 +18,7 @@ func TestDepositar(t *testing.T) {
 }
 
 func TestDepositarValorInvalido(t *testing.T) {
-	conta := NovaConta(0)
+	conta := NovaConta(0, 0)
 	valorDeposito := float64(-1)
 	err := conta.Depositar(valorDeposito)
 	if err != ErrValorInvalidoDeposito {
@@ -27,7 +27,7 @@ func TestDepositarValorInvalido(t *testing.T) {
 }
 
 func TestSacar(t *testing.T) {
-	conta := NovaConta(1000)
+	conta := NovaConta(1000, 0)
 	saldoEsperado := 900.00
 	err := conta.Sacar(100)
 	if err != nil {
@@ -39,7 +39,7 @@ func TestSacar(t *testing.T) {
 }
 
 func TestSacarValorInsuficiente(t *testing.T) {
-	conta := NovaConta(100)
+	conta := NovaConta(100, 0)
 	err := conta.Sacar(1000)
 	if err != ErrValorInvalidoSaque {
 		t.Errorf("Valor inválido para saque: %v", err)
@@ -50,8 +50,8 @@ func TestSacarValorInsuficiente(t *testing.T) {
 }
 
 func TestTransferirValor(t *testing.T) {
-	contaOrigem := NovaConta(1000)
-	contaDestino := NovaConta(100)
+	contaOrigem := NovaConta(1000, 0)
+	contaDestino := NovaConta(100, 0)
 	contaOrigem.Transferir(300, contaDestino)
 
 	if contaOrigem.saldo != 700 {
@@ -64,8 +64,8 @@ func TestTransferirValor(t *testing.T) {
 }
 
 func TestTransferirValorInvalido(t *testing.T) {
-	contaOrigem := NovaConta(100)
-	contaDestino := NovaConta(200)
+	contaOrigem := NovaConta(100, 0)
+	contaDestino := NovaConta(200, 0)
 	err := contaOrigem.Transferir(1000, contaDestino)
 
 	if err != nil && contaOrigem.saldo != 100 {
@@ -74,5 +74,17 @@ func TestTransferirValorInvalido(t *testing.T) {
 
 	if err != nil && contaDestino.saldo != 200 {
 		t.Errorf("Falhada a transferência, a conta destino deve permanecer com o mesmo saldo. Erro: %v", err)
+	}
+}
+
+func TestSacarValorComLimite(t *testing.T) {
+	conta := NovaConta(100, 100)
+	saldoEsperado := -50.00
+	err := conta.Sacar(150)
+	if err != nil {
+		t.Errorf("Erro ao sacar valor: %v", err)
+	}
+	if conta.saldo != saldoEsperado {
+		t.Errorf("Saldo restante deveria ser %f mas tem %f", saldoEsperado, conta.saldo)
 	}
 }

@@ -14,9 +14,10 @@ type Conta struct {
 }
 
 // NovaConta cria e retorna uma conta
-func NovaConta(saldo float64) *Conta {
+func NovaConta(saldo float64, limite float64) *Conta {
 	return &Conta{
-		saldo: saldo,
+		saldo:  saldo,
+		limite: limite,
 	}
 }
 
@@ -31,7 +32,7 @@ func (c *Conta) Depositar(valor float64) error {
 
 // Sacar decrementa valor do saldo existente
 func (c *Conta) Sacar(valor float64) error {
-	if c.saldo-valor < 0 {
+	if (c.saldo + c.limite) < valor {
 		return ErrValorInvalidoSaque
 	}
 	c.saldo -= valor
