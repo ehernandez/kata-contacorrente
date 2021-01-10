@@ -10,4 +10,8 @@ class Conta {
   func depositar(_ valor: Double) {
     saldo = saldo + valor
   }
+
+  func sacar(_ valorSaque: Double) {
+    saldo = saldo - valorSaque
+  }
 }

@@ -12,4 +12,10 @@ final class ContaTests: XCTestCase {
         conta.depositar(100)
         XCTAssertEqual(conta.saldo, 100)
     }
+
+    func testSacar() {
+        let conta = Conta(1000)
+        conta.sacar(10)
+        XCTAssertEqual(conta.saldo, 900)
+    }
 }
