@@ -6,4 +6,8 @@ class Conta {
   init(_ saldo: Double = 0.0) {
     self.saldo = saldo
   }
+
+  func depositar(_ valor: Double) {
+    saldo = saldo + valor
+  }
 }
