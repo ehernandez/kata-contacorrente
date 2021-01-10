@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestDepositar(t *testing.T) {
 	conta := NovaConta(0)
@@ -44,5 +46,19 @@ func TestSacarValorInsuficiente(t *testing.T) {
 	}
 	if conta.saldo != 100 {
 		t.Errorf("Saldo não deve mudar quando valor for insuficiente")
+	}
+}
+
+func TestTransferirValor(t *testing.T) {
+	contaOrigem := NovaConta(1000)
+	contaDestino := NovaConta(100)
+	contaOrigem.Transferir(300, contaDestino)
+
+	if contaOrigem.saldo != 700 {
+		t.Errorf("Após transferir 300 reais, a conta origem deveria ter 700 de saldo. Saldo: %f", contaOrigem.saldo)
+	}
+
+	if contaDestino.saldo != 400 {
+		t.Error("Após receber 300 reais via transferência, a conta destino deveria ter 400")
 	}
 }
