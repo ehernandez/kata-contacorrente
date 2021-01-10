@@ -24,4 +24,12 @@ final class ContaTests: XCTestCase {
         XCTAssertThrowsError(try conta.sacar(1000))
         XCTAssertEqual(conta.saldo, 100)
     }
+
+    func testTransferencia() {
+        let contaOrigem = Conta(1000)
+        let contaDestino = Conta(100)
+        contaOrigem.transferir(contaDestino, 300)
+        XCTAssertEqual(contaOrigem.saldo, 700)
+        XCTAssertEqual(contaDestino.saldo, 400)
+    }
 }

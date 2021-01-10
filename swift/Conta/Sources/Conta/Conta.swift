@@ -17,6 +17,11 @@ class Conta {
     }
     saldo = saldo - valorSaque
   }
+
+  func transferir(_ contaDestino: Conta, _ valor: Double) {
+      try? sacar(valor)
+      contaDestino.depositar(valor)
+  }
 }
 
 enum ContaError: Error, Equatable {
