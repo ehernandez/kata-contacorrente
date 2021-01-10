@@ -15,7 +15,7 @@ final class ContaTests: XCTestCase {
 
     func testSacar() {
         let conta = Conta(1000)
-        try? conta.sacar(10)
+        try? conta.sacar(100)
         XCTAssertEqual(conta.saldo, 900)
     }
 
@@ -31,5 +31,13 @@ final class ContaTests: XCTestCase {
         contaOrigem.transferir(contaDestino, 300)
         XCTAssertEqual(contaOrigem.saldo, 700)
         XCTAssertEqual(contaDestino.saldo, 400)
+    }
+
+    func testTransferenciaValorInsuficiente() {
+        let contaOrigem = Conta(100)
+        let contaDestino = Conta(200)
+        contaOrigem.transferir(contaDestino, 1000)
+        XCTAssertEqual(contaOrigem.saldo, 100)
+        XCTAssertEqual(contaDestino.saldo, 200)
     }
 }

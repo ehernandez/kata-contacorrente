@@ -8,19 +8,21 @@ class Conta {
   }
 
   func depositar(_ valor: Double) {
-    saldo = saldo + valor
+    self.saldo = self.saldo + valor
   }
 
   func sacar(_ valorSaque: Double) throws {
-    guard saldo < valorSaque else {
+    if self.saldo < valorSaque {
       throw ContaError.SaldoInsuficienteError("Saldo insuficiente para efetuar essa transação.")
     }
-    saldo = saldo - valorSaque
+    self.saldo = self.saldo - valorSaque
   }
 
   func transferir(_ contaDestino: Conta, _ valor: Double) {
-      try? sacar(valor)
+    do {
+      try sacar(valor)
       contaDestino.depositar(valor)
+    } catch {}
   }
 }
 
