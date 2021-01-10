@@ -40,4 +40,10 @@ final class ContaTests: XCTestCase {
         XCTAssertEqual(contaOrigem.saldo, 100)
         XCTAssertEqual(contaDestino.saldo, 200)
     }
+
+    func testLimiteDeCredito() {
+        let conta = Conta(100, 100)
+        try? conta.sacar(150)
+        XCTAssertEqual(conta.saldo, -50)
+    }
 }
