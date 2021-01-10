@@ -23,3 +23,12 @@ func TestDepositarValorInvalido(t *testing.T) {
 		t.Errorf("Valor inválido para depósito: %v", err)
 	}
 }
+
+func TestSacar(t *testing.T) {
+	conta := NovaConta(1000)
+	saldoEsperado := 900.00
+	conta.Sacar(100.0)
+	if conta.saldo != saldoEsperado {
+		t.Errorf("Saldo restante deveria ser %f mas tem %f", saldoEsperado, conta.saldo)
+	}
+}

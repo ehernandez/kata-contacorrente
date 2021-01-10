@@ -26,6 +26,11 @@ func (c *Conta) Depositar(valor float64) error {
 	return nil
 }
 
+// Sacar decrementa valor do saldo existente
+func (c *Conta) Sacar(valor float64) {
+	c.saldo -= valor
+}
+
 func main() {
 
 }
