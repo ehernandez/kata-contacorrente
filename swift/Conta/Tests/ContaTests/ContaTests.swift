@@ -15,7 +15,13 @@ final class ContaTests: XCTestCase {
 
     func testSacar() {
         let conta = Conta(1000)
-        conta.sacar(10)
+        try? conta.sacar(10)
         XCTAssertEqual(conta.saldo, 900)
+    }
+
+    func testTentarSacarValorInsuficiente() {
+        let conta = Conta(100)
+        XCTAssertThrowsError(try conta.sacar(1000))
+        XCTAssertEqual(conta.saldo, 100)
     }
 }

@@ -11,7 +11,14 @@ class Conta {
     saldo = saldo + valor
   }
 
-  func sacar(_ valorSaque: Double) {
+  func sacar(_ valorSaque: Double) throws {
+    guard saldo < valorSaque else {
+      throw ContaError.SaldoInsuficienteError("Saldo insuficiente para efetuar essa transação.")
+    }
     saldo = saldo - valorSaque
   }
+}
+
+enum ContaError: Error, Equatable {
+  case SaldoInsuficienteError(String)
 }
