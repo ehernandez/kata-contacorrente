@@ -39,9 +39,14 @@ func (c *Conta) Sacar(valor float64) error {
 }
 
 // Transferir transfere o valor da conta para outra conta
-func (c *Conta) Transferir(valor float64, destino *Conta) {
-	c.Sacar(valor)
-	destino.Depositar(valor)
+func (c *Conta) Transferir(valor float64, destino *Conta) error {
+	if err := c.Sacar(valor); err != nil {
+		return err
+	}
+	if err := destino.Depositar(valor); err != nil {
+		return err
+	}
+	return nil
 }
 
 func main() {

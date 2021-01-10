@@ -62,3 +62,17 @@ func TestTransferirValor(t *testing.T) {
 		t.Error("Após receber 300 reais via transferência, a conta destino deveria ter 400")
 	}
 }
+
+func TestTransferirValorInvalido(t *testing.T) {
+	contaOrigem := NovaConta(100)
+	contaDestino := NovaConta(200)
+	err := contaOrigem.Transferir(1000, contaDestino)
+
+	if err != nil && contaOrigem.saldo != 100 {
+		t.Errorf("Após transferir 1000 reais, a conta origem deveria ter 100 de saldo. Erro: %v", err)
+	}
+
+	if err != nil && contaDestino.saldo != 200 {
+		t.Errorf("Falhada a transferência, a conta destino deve permanecer com o mesmo saldo. Erro: %v", err)
+	}
+}
