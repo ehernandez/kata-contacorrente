@@ -100,3 +100,23 @@ func TestSacarValorComLimite(t *testing.T) {
 		t.Errorf("Saldo restante deveria ser %f mas tem %f", saldoEsperado, conta.saldo)
 	}
 }
+
+func TestGerarExtrato(t *testing.T) {
+	conta := NovaConta(0, 0)
+	conta.Depositar(1000)
+	conta.Sacar(100)
+	if len(conta.operacoes) != 2 {
+		t.Errorf("Total de operações deve ser 2 (duas), porém tem %d", len(conta.operacoes))
+	}
+	extrato := conta.GerarExtrato()
+	extratoEsperado := []string{
+		"Depósito: R$ 1000.00",
+		"Saque: R$ 100.00",
+		"Saldo: R$ 900.00",
+	}
+	for pos, linha := range extrato {
+		if linha != extratoEsperado[pos] {
+			t.Errorf("Extrato difere do esperado. Linha gerada %s, linha esperada %s", linha, extratoEsperado[pos])
+		}
+	}
+}

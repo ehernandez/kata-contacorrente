@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // ErrValorInvalidoDeposito erro para representar um valor inválido para depósito
 var ErrValorInvalidoDeposito = errors.New("valor deve ser maior que zero")
@@ -13,14 +16,17 @@ var ErrValorInsuficienteSaque = errors.New("valor de saldo insuficiente")
 
 // Conta estrutura que representa uma conta bancária
 type Conta struct {
-	saldo float64
+	saldo     float64
+	limite    float64
+	operacoes []string
 }
 
 // NovaConta cria e retorna uma conta
 func NovaConta(saldo float64, limite float64) *Conta {
 	return &Conta{
-		saldo:  saldo,
-		limite: limite,
+		saldo:     saldo,
+		limite:    limite,
+		operacoes: make([]string, 0),
 	}
 }
 
@@ -30,6 +36,7 @@ func (c *Conta) Depositar(valor float64) error {
 		return ErrValorInvalidoDeposito
 	}
 	c.saldo += valor
+	c.registraOperacao(fmt.Sprintf("Depósito: R$ %.2f", valor))
 	return nil
 }
 
@@ -42,6 +49,7 @@ func (c *Conta) Sacar(valor float64) error {
 		return ErrValorInsuficienteSaque
 	}
 	c.saldo -= valor
+	c.registraOperacao(fmt.Sprintf("Saque: R$ %.2f", valor))
 	return nil
 }
 
@@ -53,7 +61,19 @@ func (c *Conta) Transferir(valor float64, destino *Conta) error {
 	if err := destino.Depositar(valor); err != nil {
 		return err
 	}
+	c.registraOperacao(fmt.Sprintf("Transferência: R$ %.2f", valor))
 	return nil
+}
+
+// GerarExtrato gera um extra com todas as operações executadas na conta
+// representadas com um identificador e um valor
+func (c *Conta) GerarExtrato() []string {
+	operacoes := append(c.operacoes, fmt.Sprintf("Saldo: R$ %.2f", c.saldo))
+	return operacoes
+}
+
+func (c *Conta) registraOperacao(identificacao string) {
+	c.operacoes = append(c.operacoes, identificacao)
 }
 
 func main() {
