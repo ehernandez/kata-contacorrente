@@ -46,4 +46,14 @@ final class ContaTests: XCTestCase {
         try? conta.sacar(150)
         XCTAssertEqual(conta.saldo, -50)
     }
+
+    func testExtrato() {
+        let conta = Conta(0)
+        conta.depositar(1000)
+        try? conta.sacar(100)
+        XCTAssertEqual(
+            conta.extrato().count,
+            "Valor depositado: R$ 1.000,00\nValor sacado: R$ 100,00\nSaldo: R$ 900,00".count
+        )
+    }
 }
