@@ -140,6 +140,13 @@ Documento contendo boas práticas para escrita de testes: https://www.betterspec
 
 Para rodar os testes: `cd swift/Conta && swift test`
 
+### Exemplos em Go
+
+Exemplo inicial de Conta em Go (`go/conta.go`).
+
+Os testes são escritos o framework de testes padrão da linguagem.
+
+Para rodar os testes: `cd go && go test -v`
 
 ## Execuções
 Esse kata já foi executado algumas vezes e algumas informações podem ser pertinentes para quem for repeti-lo, em conjunto ou mesmo de forma individual.
