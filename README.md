@@ -130,6 +130,17 @@ Documento contendo boas práticas para escrita de testes: https://www.betterspec
 
 Para rodar os testes: `cd ruby && make test`
 
+### Exemplos em Swift
+
+Exemplo inicial de Conta em Swift (`swift/Conta/conta.swift`).
+
+Para a escrita dos testes foi utilizado o framework nativo XCTest [XCTest](https://developer.apple.com/documentation/xctest).
+
+Documento contendo boas práticas para escrita de testes: https://www.betterspecs.org/
+
+Para rodar os testes: `cd swift/Conta && swift test`
+
+
 ## Execuções
 Esse kata já foi executado algumas vezes e algumas informações podem ser pertinentes para quem for repeti-lo, em conjunto ou mesmo de forma individual.
 1. Pares com experiência foram capazes de fazer o exercício em um intervalo de tempo entre 60 - 80 minutos.
