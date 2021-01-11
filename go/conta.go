@@ -5,8 +5,11 @@ import "errors"
 // ErrValorInvalidoDeposito erro para representar um valor inválido para depósito
 var ErrValorInvalidoDeposito = errors.New("valor deve ser maior que zero")
 
-// ErrValorInvalidoSaque error para representar um valor inválido para saque
-var ErrValorInvalidoSaque = errors.New("valor de saldo insuficiente para saque")
+// ErrValorInvalidoSaque erro para representar um valor inválido para saque
+var ErrValorInvalidoSaque = errors.New("valor deve ser maior que zero")
+
+// ErrValorInsuficienteSaque erro para representar um saque com saldo insuficiente
+var ErrValorInsuficienteSaque = errors.New("valor de saldo insuficiente")
 
 // Conta estrutura que representa uma conta bancária
 type Conta struct {
@@ -32,8 +35,11 @@ func (c *Conta) Depositar(valor float64) error {
 
 // Sacar decrementa valor do saldo existente
 func (c *Conta) Sacar(valor float64) error {
-	if (c.saldo + c.limite) < valor {
+	if valor <= 0 {
 		return ErrValorInvalidoSaque
+	}
+	if (c.saldo + c.limite) < valor {
+		return ErrValorInsuficienteSaque
 	}
 	c.saldo -= valor
 	return nil

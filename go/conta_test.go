@@ -38,10 +38,22 @@ func TestSacar(t *testing.T) {
 	}
 }
 
+func TestSacarValorInvalido(t *testing.T) {
+	conta := NovaConta(1000, 0)
+	saldoEsperado := 1000.00
+	err := conta.Sacar(-1)
+	if err != ErrValorInvalidoSaque {
+		t.Errorf("Erro ao sacar valor: %v", err)
+	}
+	if conta.saldo != saldoEsperado {
+		t.Errorf("Saldo restante deveria ser %f mas tem %f", saldoEsperado, conta.saldo)
+	}
+}
+
 func TestSacarValorInsuficiente(t *testing.T) {
 	conta := NovaConta(100, 0)
 	err := conta.Sacar(1000)
-	if err != ErrValorInvalidoSaque {
+	if err != ErrValorInsuficienteSaque {
 		t.Errorf("Valor inválido para saque: %v", err)
 	}
 	if conta.saldo != 100 {
