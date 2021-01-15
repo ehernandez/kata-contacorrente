@@ -70,6 +70,11 @@ Exemplo inicial de Conta em Java (`Conta.java`)
 public class Conta {
     int id;
     double saldo;
+    
+    public Conta(int id) {
+      this.id = id;
+      this.saldo = 0;
+    }
 }
 ```
 
@@ -83,8 +88,8 @@ public class TestaConta {
     
     @Test
     public void testaSaldo() {
-        Conta contaTeste = new Conta();
-        Assert.assertEquals(0, contaTeste);
+        Conta contaTeste = new Conta(1);
+        Assert.assertEquals(0, contaTeste.getSaldo());
     }
 
 }
