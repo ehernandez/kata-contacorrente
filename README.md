@@ -152,7 +152,7 @@ Para rodar os testes: `cd go && go test -v`
 Esse kata já foi executado algumas vezes e algumas informações podem ser pertinentes para quem for repeti-lo, em conjunto ou mesmo de forma individual.
 1. Pares com experiência foram capazes de fazer o exercício em um intervalo de tempo entre 60 - 80 minutos.
 1. Pares sem experiência foram capazes de fazer o exercício em um intervalo de tempo entre 90 - 120 minutos.
-1. Conjunto de programadores em estilo dojo ou mob progrraming foram capazes de fazer o exercício em um intervalo de tempo entre 90 - 120 minutos.
+1. Conjunto de programadores em estilo dojo ou mob programming foram capazes de fazer o exercício em um intervalo de tempo entre 90 - 120 minutos.
 
 ## Agradecimentos
 Esse exercício existe e está em constante melhoria através do apoio direto e indireto de algumas pessoas. Entre elas:
